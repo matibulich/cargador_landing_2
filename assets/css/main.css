@@ -1,0 +1,118 @@
+/* =============================================================
+   main.css — SOLNET Landing + Checkout Styles
+   ============================================================= */
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.glass-effect {
+    background: rgba(22, 27, 34, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+/* ── Hero ────────────────────────────────────────────────────── */
+.hero-bg {
+    min-height: auto;
+}
+
+/* ── Mercado Pago Button ─────────────────────────────────────── */
+.btn-mp {
+    background-color: #009ee3;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-mp:hover {
+    background-color: #0081bb;
+    transform: translateY(-2px);
+}
+
+/* ── Checkout Modal ──────────────────────────────────────────── */
+.checkout-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.checkout-modal.active {
+    display: flex;
+}
+
+/* ── MP Spinner ──────────────────────────────────────────────── */
+.mp-spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid rgba(0, 158, 227, 0.2);
+    border-top-color: #009ee3;
+    border-radius: 50%;
+    animation: mp-spin 1s linear infinite;
+}
+
+@keyframes mp-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Order History Drawer ────────────────────────────────────── */
+.history-drawer {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 350px;
+    height: 100vh;
+    background: #0a0c10;
+    z-index: 60;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.history-drawer.active {
+    right: 0;
+}
+
+/* ── Order Badges ────────────────────────────────────────────── */
+.order-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-weight: bold;
+}
+
+.badge-approved {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.badge-rejected {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.badge-pending {
+    background: rgba(234, 179, 8, 0.2);
+    color: #eab308;
+}
+
+/* ── MP Gateway Option Labels ────────────────────────────────── */
+#mp-opt-card,
+#mp-opt-transfer,
+#mp-opt-cash {
+    transition: border-color 0.2s, background 0.2s;
+}
+
+/* ── Progress Bar Animation ──────────────────────────────────── */
+@keyframes progress-anim {
+    from { width: 0%; }
+    to   { width: 100%; }
+}

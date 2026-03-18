@@ -1,0 +1,31 @@
+# Dependencias
+node_modules/
+
+# Entorno local
+.env
+.env.local
+.env.*.local
+
+# Variables de producción (nunca subir)
+.env.production
+
+# Agentes / tools locales (no son código del proyecto)
+.agents/
+.gemini/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output
+dist/
+build/
+.next/
+
+# Cache
+.cache/
